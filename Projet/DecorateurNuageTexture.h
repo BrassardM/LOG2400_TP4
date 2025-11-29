@@ -2,7 +2,7 @@
 #include "DecorateurNuage.h"
 class DecorateurNuageTexture : public DecorateurNuage {
 public:
-    DecorateurNuageTexture(ComposantNuage* composant);
+    DecorateurNuageTexture(std::weak_ptr<ComposantNuage> composant);
     ~DecorateurNuageTexture() = default;
     
     std::string obtenirInformation() const override;

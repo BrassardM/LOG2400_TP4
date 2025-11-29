@@ -15,11 +15,11 @@ public:
     
     bool fin() const override;
     //va donner comme dernier pair le dernier et le premier
-    std::pair<Position,Position>* obtenirCourant() override; //reference non possessif
+    std::weak_ptr<std::pair<Position,Position>> obtenirCourant() override; //reference non possessif
     void suivant() override;
 private:
     std::vector<Position>& m_positions;
-    std::unique_ptr<std::pair<Position,Position>> m_courant;
+    std::shared_ptr<std::pair<Position,Position>> m_courant;
     int m_indexPremier;
     int m_indexDeuxieme;
 };

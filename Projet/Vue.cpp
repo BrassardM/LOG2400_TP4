@@ -31,9 +31,9 @@ void Vue::afficherTableau() const {
     {
         std::unique_ptr<IterateurGestionnairePoints> points = std::move(GestionnairePoints::obtenirInstance()->creerIterateur());
         while (!points->fin()) {
-            Point* point = points->obtenirCourant();
-            DecorateurPointPosition pointPosition(point);
-            DecorateurPointTexture pointTexture(&pointPosition);
+            std::weak_ptr<Point> point = points->obtenirCourant();
+            std::shared_ptr<DecorateurPointPosition> pointPosition(std::make_shared<DecorateurPointPosition>(point));
+            DecorateurPointTexture pointTexture(pointPosition);
             for (char c : pointTexture.obtenirInformation()){
                 switch (c){
                 case ('n'):
@@ -56,9 +56,9 @@ void Vue::afficherTableau() const {
     {
         std::unique_ptr<Iterateur<NuageDePoints>> nuages = std::move(GestionnaireNuages::obtenirInstance()->creerIterateur());
         while (!nuages->fin()) {
-            NuageDePoints* nuage = nuages->obtenirCourant();
-            DecorateurNuageTexture nuageTexture(nuage);
-            DecorateurNuageElements nuageIds(&nuageTexture);
+            std::weak_ptr<NuageDePoints> nuage = nuages->obtenirCourant();
+            std::shared_ptr<DecorateurNuageTexture> nuageTexture(std::make_shared<DecorateurNuageTexture>(nuage));
+            DecorateurNuageElements nuageIds(nuageTexture);
             
             for (char c : nuageIds.obtenirInformation()){
                 switch (c){
@@ -89,9 +89,9 @@ void Vue::afficherGrille() const {
     std::unique_ptr<Iterateur<Polygone>> polygones = std::move(GestionnairePolygones::obtenirInstance()->creerIterateur());
 
     while (!polygones->fin()){
-        std::unique_ptr<Iterateur<std::pair<Position,Position>>> iterateurPosition = std::move(polygones->obtenirCourant()->creerIterateur());
+        std::unique_ptr<Iterateur<std::pair<Position,Position>>> iterateurPosition = std::move(polygones->obtenirCourant().lock()->creerIterateur());
         while (!iterateurPosition->fin()){
-            std::pair<Position,Position>* positions = iterateurPosition->obtenirCourant();
+            std::shared_ptr<std::pair<Position,Position>> positions = iterateurPosition->obtenirCourant().lock();
             std::pair<int,int> premierePosition = positions->first.obtenirPair();
             std::pair<int,int> deuxiemePosition = positions->second.obtenirPair();
             tracerLigne(grille,premierePosition.first, premierePosition.second, deuxiemePosition.first,deuxiemePosition.second);

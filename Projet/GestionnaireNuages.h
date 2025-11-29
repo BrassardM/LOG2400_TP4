@@ -7,7 +7,7 @@ class GestionnaireNuages : public Observateur {
 public:
     ~GestionnaireNuages() = default;
 
-    static GestionnaireNuages* obtenirInstance(); //retourne pointeur non possedant
+    static std::shared_ptr<GestionnaireNuages> obtenirInstance(); //retourne pointeur non possedant
 
     void miseAJour() override;
 
@@ -24,7 +24,7 @@ private:
     GestionnaireNuages(GestionnaireNuages&&) = delete;
     GestionnaireNuages& operator=(GestionnaireNuages&&) = delete;      
 
-    std::map<unsigned int,std::unique_ptr<NuageDePoints>> m_nuages;
+    std::map<unsigned int,std::shared_ptr<NuageDePoints>> m_nuages;
     std::vector<char> m_textures;
     int m_indexTexture;
 };

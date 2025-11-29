@@ -5,12 +5,12 @@
 
 class IterateurGestionnaireNuage : public Iterateur<NuageDePoints>{
 public:
-    IterateurGestionnaireNuage(std::map<unsigned int, std::unique_ptr<NuageDePoints>>& nuages);
+    IterateurGestionnaireNuage(std::map<unsigned int, std::shared_ptr<NuageDePoints>>& nuages);
     ~IterateurGestionnaireNuage() override = default;
     bool fin() const override;
-    NuageDePoints* obtenirCourant() override; //reference non possessif
+    std::weak_ptr<NuageDePoints> obtenirCourant() override; //reference non possessif
     void suivant() override;
 private:
-    std::map<unsigned int, std::unique_ptr<NuageDePoints>>& m_nuages;
-    std::map<unsigned int, std::unique_ptr<NuageDePoints>>::iterator m_iterateurMappe; 
+    std::map<unsigned int, std::shared_ptr<NuageDePoints>>& m_nuages;
+    std::map<unsigned int, std::shared_ptr<NuageDePoints>>::iterator m_iterateurMappe; 
 };

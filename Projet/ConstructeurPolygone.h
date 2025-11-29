@@ -7,8 +7,8 @@ public:
     ConstructeurPolygone() = default;
     virtual ~ConstructeurPolygone() = default;
 
-    std::unique_ptr<Polygone> creerPolygone(std::list<Point*> points) const;
+    std::shared_ptr<Polygone> creerPolygone(std::list<std::weak_ptr<Point>> points) const;
 protected:
-    virtual Position choisirProchainePosition(Position courante, std::list<Point*>& points) const = 0; 
-    virtual Position choisirPremier(std::list<Point*>& points) const = 0;
+    virtual Position choisirProchainePosition(Position courante, std::list<std::weak_ptr<Point>>& points) const = 0; 
+    virtual Position choisirPremier(std::list<std::weak_ptr<Point>>& points) const = 0;
 };

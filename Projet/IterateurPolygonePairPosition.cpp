@@ -7,12 +7,12 @@ bool IterateurPolygonePairPosition::fin() const {
     return m_indexPremier > m_positions.size() || (m_positions.size() <= 1);
 }
 
-std::pair<Position,Position>* IterateurPolygonePairPosition::obtenirCourant() { 
-    return m_courant.get();
+std::weak_ptr<std::pair<Position,Position>> IterateurPolygonePairPosition::obtenirCourant() { 
+    return m_courant;
 }
 
 void IterateurPolygonePairPosition::suivant(){
-    m_courant = std::make_unique<std::pair<Position,Position>>(m_positions[m_indexPremier], m_positions[m_indexDeuxieme % m_positions.size()]);
+    m_courant = std::make_shared<std::pair<Position,Position>>(m_positions[m_indexPremier], m_positions[m_indexDeuxieme % m_positions.size()]);
     m_indexPremier++;
     m_indexDeuxieme++;
 }

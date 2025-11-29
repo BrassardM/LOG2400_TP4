@@ -2,12 +2,17 @@
 
 Point::Point(const std::pair<int,int>& position) : m_retire(false), m_position{position} {}
 
-void Point::ajouterTexture(Texture* texture) {
+void Point::ajouterTexture(std::weak_ptr<Texture> texture) {
     m_textures.push_back(texture);
 }
 
-void Point::retirerTexture(Texture* texture){
-    m_textures.remove(texture);
+void Point::retirerTexture(std::weak_ptr<Texture> texture){
+    for (auto it = m_textures.begin(); it != m_textures.end(); ++it){
+        if (texture.lock() == it->lock()) {
+            m_textures.erase(it);
+            break;
+        }
+    }
 }
 
 void Point::retirer(){
@@ -32,8 +37,9 @@ Position Point::obtenirPosition() const {
     return m_position;
 }
 
-std::list<Point*> Point::obtenirPoints() {
-    return {this};
+std::list<std::weak_ptr<Point>> Point::obtenirPoints() {
+    std::weak_ptr<Point> self = shared_from_this();
+    return {self};
 }
 
 std::string Point::obtenirInformation() const{
@@ -42,8 +48,8 @@ std::string Point::obtenirInformation() const{
 
 std::string Point::obtenirTexture() const {
     std::string out;
-    for (Texture* texture : m_textures) {
-        out += texture->obtenirCharactere();
+    for (std::weak_ptr<Texture> texture : m_textures) {
+        out += texture.lock()->obtenirCharactere();
     }
     return out;
 }

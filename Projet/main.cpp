@@ -32,8 +32,8 @@ int main(int argc, char* argv[]) {
     
     //intialiser les points et les classes
     {
-        GestionnairePoints* gestionnairePoints = GestionnairePoints::obtenirInstance();
-        GestionnaireNuages* gestionnaireNuages = GestionnaireNuages::obtenirInstance();
+        std::shared_ptr<GestionnairePoints> gestionnairePoints = GestionnairePoints::obtenirInstance();
+        std::shared_ptr<GestionnaireNuages> gestionnaireNuages = GestionnaireNuages::obtenirInstance();
         gestionnaireNuages->intialiserTextures(texturesNuages);
         gestionnairePoints->ajouterObservateur(gestionnaireNuages);
         gestionnairePoints->ajouterObservateur(GestionnairePolygones::obtenirInstance());

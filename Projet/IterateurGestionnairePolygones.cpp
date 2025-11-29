@@ -1,12 +1,12 @@
 #include "IterateurGestionnairePolygones.h"
-IterateurGestionnairePolygones::IterateurGestionnairePolygones(std::vector<std::unique_ptr<Polygone>>& polygones) : m_polygones(polygones), m_index{0}{}
+IterateurGestionnairePolygones::IterateurGestionnairePolygones(std::vector<std::shared_ptr<Polygone>>& polygones) : m_polygones(polygones), m_index{0} {}
 
 bool IterateurGestionnairePolygones::fin() const{
     return (m_index >= m_polygones.size());
 }
 
-Polygone* IterateurGestionnairePolygones::obtenirCourant(){
-    return m_polygones[m_index].get();
+std::weak_ptr<Polygone> IterateurGestionnairePolygones::obtenirCourant(){
+    return m_polygones[m_index];
 }
 
 void IterateurGestionnairePolygones::suivant(){

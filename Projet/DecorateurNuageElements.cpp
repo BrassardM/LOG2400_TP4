@@ -1,5 +1,5 @@
 #include "DecorateurNuageElements.h"
-DecorateurNuageElements::DecorateurNuageElements(ComposantNuage* composant) : DecorateurNuage(composant) {}
+DecorateurNuageElements::DecorateurNuageElements(std::weak_ptr<ComposantNuage> composant) : DecorateurNuage(composant) {}
 
 std::string DecorateurNuageElements::obtenirInformation() const {
     std::string sortie; 
@@ -8,5 +8,5 @@ std::string DecorateurNuageElements::obtenirInformation() const {
         sortie += " ";
     }
     sortie.pop_back();
-    return  m_composant->obtenirInformation() + 'i' + sortie;
+    return  m_composant.lock()->obtenirInformation() + 'i' + sortie;
 }

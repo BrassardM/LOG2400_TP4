@@ -6,10 +6,10 @@
 
 class NuageDePoints : public Element, public ComposantNuage {
 public:
-    NuageDePoints(const std::list<Element*>& elements, char texture);
+    NuageDePoints(const std::list<std::weak_ptr<Element>>& elements, char texture);
     ~NuageDePoints() override = default;
 
-    std::list<Point*> obtenirPoints() override; // appelle la fonction pour tout ses elements
+    std::list<std::weak_ptr<Point>> obtenirPoints() override; // appelle la fonction pour tout ses elements
 
     void restaurerElement();
     void retirerPointInvalide();
@@ -19,7 +19,7 @@ public:
 protected:
     std::vector<int> obtenirIDElements() const override;
 private:
-    std::pair<int,Element*> m_elementRetire; //index dans la liste & pointeur non possessif
-    std::list<Element*> m_elements;          //pointeurs non possessifs
-    std::unique_ptr<Texture> m_texture;      //pointeur possessif
+    std::pair<int,std::weak_ptr<Element>> m_elementRetire; //index dans la liste & pointeur non possessif
+    std::list<std::weak_ptr<Element>> m_elements;          //pointeurs non possessifs
+    std::shared_ptr<Texture> m_texture;      //pointeur possessif
 };

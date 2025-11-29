@@ -7,7 +7,7 @@ void CommandeSupprimerPoint::executer(){
 }
 
 void CommandeSupprimerPoint::annuler(){
-    if (m_point.get() != nullptr){
+    if (m_point != nullptr){
         GestionnairePoints::obtenirInstance()->ajouterPoint(std::move(m_point));
     }
 }

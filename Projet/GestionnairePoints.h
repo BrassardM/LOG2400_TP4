@@ -7,18 +7,18 @@ class GestionnairePoints : public Sujet {
 public:
     ~GestionnairePoints() = default;
 
-    static GestionnairePoints* obtenirInstance();
+    static std::shared_ptr<GestionnairePoints> obtenirInstance();
 
     void intialiserPoints(std::vector<std::pair<int,int>> points);
     
-    void ajouterPoint(std::unique_ptr<Point> point);
+    void ajouterPoint(std::shared_ptr<Point> point);
     void deplacerPoint(unsigned int id, const std::pair<int,int>& position);
     
-    Point* obtenirPoint(unsigned int id); // non possessif
+    std::weak_ptr<Point> obtenirPoint(unsigned int id); // non possessif
 
     std::unique_ptr<IterateurGestionnairePoints> creerIterateur();
 
-    std::unique_ptr<Point> retirerPoint(unsigned int id);
+    std::shared_ptr<Point> retirerPoint(unsigned int id);
     
 private:
     GestionnairePoints() = default;
@@ -27,5 +27,5 @@ private:
     GestionnairePoints(GestionnairePoints&&) = delete;
     GestionnairePoints& operator=(GestionnairePoints&&) = delete;      
 
-    std::map<unsigned int, std::unique_ptr<Point>> m_points;
+    std::map<unsigned int, std::shared_ptr<Point>> m_points;
 };

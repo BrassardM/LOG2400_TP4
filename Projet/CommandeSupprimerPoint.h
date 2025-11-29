@@ -9,6 +9,6 @@ public:
     void executer() override;
     void annuler() override;
 private:
-    std::unique_ptr<Point> m_point;
+    std::shared_ptr<Point> m_point;
     int m_id;
 };

@@ -1,7 +1,7 @@
 #include "ConstructeurPolygone.h"
 #include <vector>
 
-std::unique_ptr<Polygone> ConstructeurPolygone::creerPolygone(std::list<Point*> points) const{
+std::shared_ptr<Polygone> ConstructeurPolygone::creerPolygone(std::list<std::weak_ptr<Point>> points) const{
     std::vector<Position> sommets;
 
     Position courante = choisirPremier(points);

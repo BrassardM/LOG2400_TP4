@@ -1,7 +1,7 @@
 #include "GestionnairePolygones.h"
-GestionnairePolygones* GestionnairePolygones::obtenirInstance(){
-    static GestionnairePolygones instance;
-    return &instance;
+std::shared_ptr<GestionnairePolygones> GestionnairePolygones::obtenirInstance(){
+    static std::shared_ptr<GestionnairePolygones> instance(new GestionnairePolygones);
+    return instance;
 }
 
 void GestionnairePolygones::miseAJour(){
@@ -28,7 +28,7 @@ void GestionnairePolygones::creerPolygones(){
     m_polygones.clear();
     std::unique_ptr<Iterateur<NuageDePoints>> it = GestionnaireNuages::obtenirInstance()->creerIterateur();
     while (!it->fin()){
-        m_polygones.push_back(std::move(m_constructeur->creerPolygone((it->obtenirCourant())->obtenirPoints())));
+        m_polygones.push_back(std::move(m_constructeur->creerPolygone((it->obtenirCourant().lock())->obtenirPoints())));
         it->suivant();
     }
 }

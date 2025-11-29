@@ -10,7 +10,7 @@ class GestionnairePolygones : public Observateur {
 public:
     ~GestionnairePolygones() = default;
 
-    static GestionnairePolygones* obtenirInstance();
+    static std::shared_ptr<GestionnairePolygones> obtenirInstance();
 
     void miseAJour() override;
     
@@ -24,6 +24,6 @@ private:
     
     void creerPolygones();
 
-    std::vector<std::unique_ptr<Polygone>> m_polygones;
+    std::vector<std::shared_ptr<Polygone>> m_polygones;
     std::unique_ptr<ConstructeurPolygone> m_constructeur;
 };

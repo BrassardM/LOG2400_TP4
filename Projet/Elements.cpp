@@ -25,8 +25,8 @@ void Element::annulerRetire(){
 }
 
 // fonction sans implementation par defaut
-void Element::ajouterTexture(Texture* texture) {}
-void Element::retirerTexture(Texture* texture) {}
+void Element::ajouterTexture(std::weak_ptr<Texture> texture) {}
+void Element::retirerTexture(std::weak_ptr<Texture> texture) {}
 bool Element::estRetire() const{ return false; }
 
 void Element::comparerProchainID(){
