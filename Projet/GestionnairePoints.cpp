@@ -1,3 +1,11 @@
+/**
+* \brief  Implementation de GestionnairePoints.
+* \file   GestionnairePoints.cpp
+* \author Omar Cadoret et Matthew Brassard
+* \date   29 novembre 2025
+* Créé le 27 novembre 2025
+*/
+
 #include "GestionnairePoints.h"
 std::shared_ptr<GestionnairePoints> GestionnairePoints::obtenirInstance(){
     static std::shared_ptr<GestionnairePoints> instance(new GestionnairePoints());

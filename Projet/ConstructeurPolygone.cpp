@@ -1,3 +1,11 @@
+/**
+* \brief  Implementation de la classe cadre d'application ConstructeurPolygone. 
+* \file   ConstructeurPolygone.cpp
+* \author Omar Cadoret et Matthew Brassard
+* \date   29 novembre 2025
+* Créé le 27 novembre 2025
+*/
+
 #include "ConstructeurPolygone.h"
 #include <vector>
 

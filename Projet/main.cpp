@@ -11,6 +11,8 @@
 
 
 int main(int argc, char* argv[]) {
+
+
     std::string args;
     // On accepte des points en entrée.
     if (argc > 1) {
@@ -23,26 +25,28 @@ int main(int argc, char* argv[]) {
     }
     
     // Voici des fonctions utiles pour réaliser le TP. 
-    // TODO: Il faudrait les placer dans des classes appropriées.
     std::vector<std::pair<int,int>> points = creerPoints(args);
     
     // Ce sont différentes textures possibles. Seules les 2 premières sont utilisées dans les scénarios du TP.
     std::vector<char> texturesNuages = {'o', '#', '$'};
     std::string cmd;
     
-    //intialiser les points et les classes
+    //Intialiser les points et tout les observateurs (du patron observateur)
     {
         std::shared_ptr<GestionnairePoints> gestionnairePoints = GestionnairePoints::obtenirInstance();
         std::shared_ptr<GestionnaireNuages> gestionnaireNuages = GestionnaireNuages::obtenirInstance();
         gestionnaireNuages->intialiserTextures(texturesNuages);
+        gestionnairePoints->intialiserPoints(points);
         gestionnairePoints->ajouterObservateur(gestionnaireNuages);
         gestionnairePoints->ajouterObservateur(GestionnairePolygones::obtenirInstance());
-        gestionnairePoints->intialiserPoints(points);
     }
     
+    // Initializer la vue et le controlleur
     Vue vue;
     Controlleur controlleur(vue);
+    
     bool continuerLaBoucle = true;
+
     while (continuerLaBoucle) {
         vue.afficherCommandePossibles();
         continuerLaBoucle = controlleur.decoderEtExecuterEntree(vue.capturerEntree());

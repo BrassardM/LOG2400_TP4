@@ -1,3 +1,11 @@
+/**
+* \brief  Implementation de la Vue.
+* \file   Vue.cpp
+* \author Omar Cadoret et Matthew Brassard
+* \date   29 novembre 2025
+* Créé le 27 novembre 2025
+*/
+
 #include "Vue.h"
 #include "affichage.h"
 #include "DecorateurNuageElements.h"

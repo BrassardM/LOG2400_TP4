@@ -1,3 +1,11 @@
+/**
+* \brief  Implementation de la strategie concrete StrategieAfficherID.
+* \file   StrategieAfficherID.cpp
+* \author Omar Cadoret et Matthew Brassard
+* \date   29 novembre 2025
+* Créé le 27 novembre 2025
+*/
+
 #include "StrategieAfficherID.h"
 #include "affichage.h"
 void StrategieAfficherID::insererPoints(std::vector<std::vector<char>>& grille, std::unique_ptr<Iterateur<Point>> points) const {

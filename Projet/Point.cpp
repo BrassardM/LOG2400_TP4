@@ -1,3 +1,11 @@
+/**
+* \brief  Implementation de point.
+* \file   Point.cpp
+* \author Omar Cadoret et Matthew Brassard
+* \date   29 novembre 2025
+* Créé le 27 novembre 2025
+*/
+
 #include "Point.h"
 
 Point::Point(const std::pair<int,int>& position) : m_retire(false), m_position{position} {}

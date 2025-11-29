@@ -1,3 +1,11 @@
+/**
+* \brief  Implementation de l'executeur de commandes.
+* \file   Executeur.cpp
+* \author Omar Cadoret et Matthew Brassard
+* \date   29 novembre 2025
+* Créé le 27 novembre 2025
+*/
+
 #include "Executeur.h"
 Executeur::Executeur() : reapplicationPossible(false){}
 

@@ -1,3 +1,11 @@
+/**
+* \brief  Implementation du sujet abstrait Sujet.
+* \file   Sujet.cpp
+* \author Omar Cadoret et Matthew Brassard
+* \date   29 novembre 2025
+* Créé le 27 novembre 2025
+*/
+
 #include "Sujet.h"
 Sujet::Sujet(){}
 

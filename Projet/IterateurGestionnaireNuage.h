@@ -1,3 +1,12 @@
+/**
+* \brief  Classe representant un IterateurConcret du patron iterateur pour le GestionnaireNuage 
+* permettant d'iterer sur les nuages de points sans exposer la structure.
+* \file   IterateurGestionnaireNuage.h
+* \author Omar Cadoret et Matthew Brassard
+* \date   29 novembre 2025
+* Créé le 27 novembre 2025
+*/
+
 #pragma once
 #include "Iterateur.h"
 #include "NuageDePoints.h"

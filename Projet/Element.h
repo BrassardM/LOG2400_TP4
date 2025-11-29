@@ -1,3 +1,12 @@
+/**
+* \brief  Classe abstraite representant une composant abstraite du patron
+* composite et qui gere lui meme les IDs de nouveaux objets.
+* \file   Element.h
+* \author Omar Cadoret et Matthew Brassard
+* \date   29 novembre 2025
+* Créé le 27 novembre 2025
+*/
+
 #pragma once
 #include <list>
 #include <string>

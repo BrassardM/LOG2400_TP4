@@ -1,3 +1,13 @@
+/**
+* \brief Classe qui possede tous les polygones, et qui gere
+* leur creation et leur mise a jour. Cette classe est un singleton du 
+* patron singleton, et un observateur du patron observateur.
+* \file   GestionnairePolygones.h
+* \author Omar Cadoret et Matthew Brassard
+* \date   29 novembre 2025
+* Créé le 27 novembre 2025
+*/
+
 #pragma once
 #include "Observateur.h"
 #include "ConstructeurPolygoneDistance.h"

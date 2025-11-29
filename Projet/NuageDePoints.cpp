@@ -1,3 +1,11 @@
+/**
+* \brief  Implementation de NuageDePoints.
+* \file   NuageDePoints.cpp
+* \author Omar Cadoret et Matthew Brassard
+* \date   29 novembre 2025
+* Créé le 27 novembre 2025
+*/
+
 #include "NuageDePoints.h"
 #include "Point.h"
 NuageDePoints::NuageDePoints(const std::list<std::weak_ptr<Element>>& elements, char texture) : m_elements{elements}, m_elementRetire{0,{}}, m_texture(std::make_shared<Texture>(texture)) {

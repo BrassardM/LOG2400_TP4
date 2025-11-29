@@ -1,3 +1,11 @@
+/**
+* \brief  Implementation de la composant abstraite Element.
+* \file   Elements.cpp
+* \author Omar Cadoret et Matthew Brassard
+* \date   29 novembre 2025
+* Créé le 27 novembre 2025
+*/
+
 #include "Element.h"
 
 unsigned int Element::m_prochainId = 0;

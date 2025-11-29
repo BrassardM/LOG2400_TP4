@@ -1,3 +1,11 @@
+/**
+* \brief  Implementation de l'implementation specifique ConstructeurPolygoneID.
+* \file   ConstructeurPolygoneID.cpp
+* \author Omar Cadoret et Matthew Brassard
+* \date   29 novembre 2025
+* Créé le 27 novembre 2025
+*/
+
 #include "ConstructeurPolygoneID.h"
 
 Position ConstructeurPolygoneID::choisirProchainePosition(Position courante, std::list<std::weak_ptr<Point>>& points) const {

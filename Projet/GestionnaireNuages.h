@@ -1,3 +1,13 @@
+/**
+* \brief  Classe qui possede tous les instance NuageDePoints, et qui gere
+* la creation de nouvelles instances et leur mise a jour relatif au changement des points. 
+* Cette classe est un singleton du patron singleton, un observateur du patron observateur.
+* \file   GestionnaireNuages.h
+* \author Omar Cadoret et Matthew Brassard
+* \date   29 novembre 2025
+* Créé le 27 novembre 2025
+*/
+
 #pragma once
 #include "GestionnairePoints.h"
 #include "Observateur.h"

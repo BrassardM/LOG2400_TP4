@@ -1,3 +1,11 @@
+/**
+* \brief  Implementation de GestionnairePolygones.
+* \file   GestionnairePolygones.cpp
+* \author Omar Cadoret et Matthew Brassard
+* \date   29 novembre 2025
+* Créé le 27 novembre 2025
+*/
+
 #include "GestionnairePolygones.h"
 std::shared_ptr<GestionnairePolygones> GestionnairePolygones::obtenirInstance(){
     static std::shared_ptr<GestionnairePolygones> instance(new GestionnairePolygones);

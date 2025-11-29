@@ -1,3 +1,12 @@
+/**
+* \brief  Position est une classe representant une position qui appartient a 
+* un point. Selon le patron expert, il est le plus en mesure de calculer sa distance
+* avec un autre point.
+* \file   Position.h
+* \author Omar Cadoret et Matthew Brassard
+* \date   29 novembre 2025
+* Créé le 27 novembre 2025
+*/
 #pragma once
 #include <utility>
 

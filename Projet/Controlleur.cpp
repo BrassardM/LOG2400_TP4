@@ -1,3 +1,11 @@
+/**
+* \brief  Implementation de la classe controleur.
+* \file   Controlleur.cpp
+* \author Omar Cadoret et Matthew Brassard
+* \date   29 novembre 2025
+* Créé le 27 novembre 2025
+*/
+
 #include "Controlleur.h"
 #include "StrategieAfficherTexture.h"
 #include "StrategieAfficherID.h"

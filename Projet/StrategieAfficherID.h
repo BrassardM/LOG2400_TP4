@@ -1,3 +1,12 @@
+/**
+* \brief  Classe representant une strategie concrete du patron strategie, permettant
+* d'afficher les points avec leurs IDs.
+* \file   StrategieAfficherID.h
+* \author Omar Cadoret et Matthew Brassard
+* \date   29 novembre 2025
+* Créé le 27 novembre 2025
+*/
+
 #pragma once
 #include "StrategieAfficher.h"
 

@@ -1,3 +1,12 @@
+/**
+* \brief  Classe representant un iterateur concret du patron iterateur qui permet
+* d'iterer sur les arcs d'un polygone sans exposer la structure. 
+* \file   IterateurPolygonePairPosition.h
+* \author Omar Cadoret et Matthew Brassard
+* \date   29 novembre 2025
+* Créé le 27 novembre 2025
+*/
+
 #pragma once
 #include "Position.h"
 #include <utility>

@@ -1,3 +1,11 @@
+/**
+* \brief  Implementation de la strategie concrete StrategieAfficherTexture.
+* \file   StrategieAfficherTexture.cpp
+* \author Omar Cadoret et Matthew Brassard
+* \date   29 novembre 2025
+* Créé le 27 novembre 2025
+*/
+
 #include "StrategieAfficherTexture.h"
 #include "affichage.h"
 void StrategieAfficherTexture::insererPoints(std::vector<std::vector<char>>& grille, std::unique_ptr<Iterateur<Point>> points) const {

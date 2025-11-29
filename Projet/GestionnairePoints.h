@@ -1,3 +1,13 @@
+/**
+* \brief  Classe qui possede tous les points, et qui gere
+* leurs operations et leur initialization. Cette classe est un singleton du 
+* patron singleton, et un sujet du patron observateur.
+* \file   GestionnairePoints.h
+* \author Omar Cadoret et Matthew Brassard
+* \date   29 novembre 2025
+* Créé le 27 novembre 2025
+*/
+
 #pragma once
 #include "Sujet.h"
 #include "Point.h"

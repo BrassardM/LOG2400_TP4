@@ -1,3 +1,12 @@
+/**
+* \brief  Classe abstraite representant un decorateur general d'un composant nuage
+* dans le patron decorateur. 
+* \file   DecorateurNuage.h
+* \author Omar Cadoret et Matthew Brassard
+* \date   29 novembre 2025
+* Créé le 27 novembre 2025
+*/
+
 #pragma once
 #include "ComposantNuage.h"
 #include <memory>

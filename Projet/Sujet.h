@@ -1,3 +1,11 @@
+/**
+* \brief  Classe abstraite representant le sujet abstrait du patron observateur. 
+* \file   Sujet.h
+* \author Omar Cadoret et Matthew Brassard
+* \date   29 novembre 2025
+* Créé le 27 novembre 2025
+*/
+
 #pragma once
 #include "Observateur.h"
 #include <vector>

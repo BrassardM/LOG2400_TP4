@@ -1,3 +1,11 @@
+/**
+* \brief  Implementation du decorateur concret DecorateurPointPosition.
+* \file   DecorateurPointPosition.cpp
+* \author Omar Cadoret et Matthew Brassard
+* \date   29 novembre 2025
+* Créé le 27 novembre 2025
+*/
+
 #include "DecorateurPointPosition.h"
 DecorateurPointPosition::DecorateurPointPosition(std::weak_ptr<ComposantPoint> composant) : DecorateurPoint(composant) {}
 

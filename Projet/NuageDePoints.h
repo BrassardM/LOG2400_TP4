@@ -1,3 +1,13 @@
+/**
+* \brief  Classe representant un composite du patron composite et d'un composant 
+* concret du patron decorateur qui permet egalement de propager des textures vers
+* les points. Cette classe possede les textures.
+* \file   NuageDePoints.h
+* \author Omar Cadoret et Matthew Brassard
+* \date   29 novembre 2025
+* Créé le 27 novembre 2025
+*/
+
 #pragma once
 #include "Element.h"
 #include "Texture.h"

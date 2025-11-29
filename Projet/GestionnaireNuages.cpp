@@ -1,3 +1,11 @@
+/**
+* \brief  Implementation de GestionnaireNuage.
+* \file   GestionnaireNuages.cpp
+* \author Omar Cadoret et Matthew Brassard
+* \date   29 novembre 2025
+* Créé le 27 novembre 2025
+*/
+
 #include "GestionnaireNuages.h"
 std::shared_ptr<GestionnaireNuages> GestionnaireNuages::obtenirInstance(){
     static std::shared_ptr<GestionnaireNuages> instance(new GestionnaireNuages()); 

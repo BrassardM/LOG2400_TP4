@@ -1,3 +1,14 @@
+/**
+* \brief  Classe representant un composant concrete du patron decorateur et
+* une feuille du patron composite. Cet element est la base de tout le
+* systeme, le systeme a comme but de manipuler ses points et d'afficher
+* les points. Cette classe possede les positions (qui sont utilisé par les polygones). 
+* \file   Point.h
+* \author Omar Cadoret et Matthew Brassard
+* \date   29 novembre 2025
+* Créé le 27 novembre 2025
+*/
+
 #pragma once
 #include "Element.h"
 #include "Position.h"

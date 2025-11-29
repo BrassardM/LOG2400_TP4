@@ -1,3 +1,11 @@
+/**
+* \brief  Implementation de l'iterateur concret iterateur polygone pair position.
+* \file   IterateurPolygonePairPosition.cpp
+* \author Omar Cadoret et Matthew Brassard
+* \date   29 novembre 2025
+* Créé le 27 novembre 2025
+*/
+
 #include "IterateurPolygonePairPosition.h"
 IterateurPolygonePairPosition::IterateurPolygonePairPosition(std::vector<Position>& positions) : m_positions(positions), m_indexPremier(0), m_indexDeuxieme(1) {
     m_courant = std::make_unique<std::pair<Position,Position>>(m_positions[m_indexPremier], m_positions[m_indexDeuxieme % m_positions.size()]);

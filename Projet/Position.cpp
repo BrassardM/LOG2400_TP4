@@ -1,3 +1,11 @@
+/**
+* \brief  Implementation de Position.
+* \file   Position.cpp
+* \author Omar Cadoret et Matthew Brassard
+* \date   29 novembre 2025
+* Créé le 27 novembre 2025
+*/
+
 #include "Position.h"
 Position::Position(const std::pair<int,int>& position) : m_position{position} {}
 

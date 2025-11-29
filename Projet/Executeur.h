@@ -1,3 +1,11 @@
+/**
+* \brief  Classe representant l'invocateur ou executeur du patron commande.
+* \file   Executeur.h
+* \author Omar Cadoret et Matthew Brassard
+* \date   29 novembre 2025
+* Créé le 27 novembre 2025
+*/
+
 #pragma once
 #include "Commande.h"
 #include <memory>

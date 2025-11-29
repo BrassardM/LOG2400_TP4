@@ -1,3 +1,12 @@
+/**
+* \brief  Classe jouant le role de controleur dans le patron architectural
+* Modele Vue Controleur (et du patron GRASP controleur).
+* \file   Controlleur.h
+* \author Omar Cadoret et Matthew Brassard
+* \date   29 novembre 2025
+* Créé le 27 novembre 2025
+*/
+
 #pragma once
 #include "Vue.h"
 #include "Executeur.h"

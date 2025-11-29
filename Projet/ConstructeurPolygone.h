@@ -1,3 +1,12 @@
+/**
+* \brief  Classe abstraite representant le cadre d'application du patron
+* de methode. 
+* \file   ConstructeurPolygone.h
+* \author Omar Cadoret et Matthew Brassard
+* \date   29 novembre 2025
+* Créé le 27 novembre 2025
+*/
+
 #pragma once
 #include <list>
 #include "Point.h"

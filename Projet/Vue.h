@@ -1,3 +1,12 @@
+/**
+* \brief  Classe representant la Vue dans le patron architectural MVC, qui se charge de tout 
+* ce qui est formattage, affichage et capture d'entree .
+* \file   Vue.h
+* \author Omar Cadoret et Matthew Brassard
+* \date   29 novembre 2025
+* Créé le 27 novembre 2025
+*/
+
 #pragma once
 #include "StrategieAfficher.h"
 #include "GestionnairePolygones.h"

@@ -1,3 +1,12 @@
+/**
+* \brief  Implementation de de la classe l'implementation 
+* specifique ConstructeurPolygoneDistance. 
+* \file   ConstructeurPolygoneDistance.cpp
+* \author Omar Cadoret et Matthew Brassard
+* \date   29 novembre 2025
+* Créé le 27 novembre 2025
+*/
+
 #include "ConstructeurPolygoneDistance.h"
 Position ConstructeurPolygoneDistance::choisirProchainePosition(Position courante, std::list<std::weak_ptr<Point>>& points) const {
     std::list<std::weak_ptr<Point>>::iterator it = points.begin();

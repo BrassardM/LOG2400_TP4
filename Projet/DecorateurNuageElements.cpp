@@ -1,3 +1,11 @@
+/**
+* \brief  Implementation du decorateur concret DecorateurNuageElement.
+* \file   DecorateurNuageElements.cpp
+* \author Omar Cadoret et Matthew Brassard
+* \date   29 novembre 2025
+* Créé le 27 novembre 2025
+*/
+
 #include "DecorateurNuageElements.h"
 DecorateurNuageElements::DecorateurNuageElements(std::weak_ptr<ComposantNuage> composant) : DecorateurNuage(composant) {}
 
