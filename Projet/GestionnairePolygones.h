@@ -1,7 +1,8 @@
 /**
 * \brief Classe qui possede tous les polygones, et qui gere
 * leur creation et leur mise a jour. Cette classe est un singleton du 
-* patron singleton, et un observateur du patron observateur.
+* patron singleton, un observateur du patron observateur et le créateur
+* du patron grasp Createur.
 * \file   GestionnairePolygones.h
 * \author Omar Cadoret et Matthew Brassard
 * \date   29 novembre 2025

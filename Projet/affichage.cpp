@@ -7,30 +7,25 @@
 
 
 void tracerLigne(std::vector<std::vector<char>>& grille, int x0, int y0, int x1, int y1) {
-    // J'ai ajouter cette ligne au code donnée pour que ca soit plus beau.
-    char lineChar = ( abs(y1 - y0) < abs(x1 - x0)/4 ) ? '-' : (( abs(x1 - x0) < abs(y1 - y0)/4 ) ? '|' : ((x1 - x0)*(y1 - y0) >= 0) ? '/' : '\\');
-    // Distance verticale
-    int lignes = abs(y1 - y0);
-    // Si la ligne est horizontale 
-    if (lignes == 0) {
-        // On prend distance horizontale 
-        lignes = abs(x1 - x0);
-        for (int i = 0; i <= lignes; ++i) {
-            // On trace chaque point de la ligne, de gauche à droite ou de droite à gauche selon la direction.
-            int x = (x0 < x1) ? x0 + i : x0 - i;
-            if (y1 >= 0 && y1 < HAUTEUR && x >= 0 && x < LARGEUR)
-                grille[y1][x] = lineChar;
-        }
-    } else {
-        // Si la ligne est verticale ou diagonale 
-        for (int i = 0; i <= lignes; ++i) {
-            double t = (double)i / lignes;
-            // On fait une interpolation lineaire
-            int x = round(x0 + t * (x1 - x0));
-            int y = round(y0 + t * (y1 - y0));
-            if (x >= 0 && x < LARGEUR && y >= 0 && y < HAUTEUR)
-                grille[y][x] = lineChar;
-        }
+    // algorithme de Bresenham
+    char caractereLigne = ( abs(y1 - y0) < abs(x1 - x0)/4 ) ? '-' 
+                        : ( ( abs(x1 - x0) < abs(y1 - y0)/4 ) ? '|' 
+                        : ( (x1 - x0)*(y1 - y0) >= 0 ? '/' : '\\') );
+
+    int deltaX = abs(x1 - x0);
+    int deltaY = abs(y1 - y0);
+    int pasX = (x0 < x1) ? 1 : -1;
+    int pasY = (y0 < y1) ? 1 : -1;
+    int erreur = deltaX - deltaY;
+
+    while (true) {
+        if (x0 >= 0 && x0 < LARGEUR && y0 >= 0 && y0 < HAUTEUR)
+            grille[y0][x0] = caractereLigne;
+
+        if (x0 == x1 && y0 == y1) break;
+        int erreurDouble = 2 * erreur;
+        if (erreurDouble > -deltaY) { erreur -= deltaY; x0 += pasX; }
+        if (erreurDouble < deltaX)  { erreur += deltaX; y0 += pasY; }
     }
 }
 
